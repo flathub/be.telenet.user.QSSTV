@@ -3,8 +3,6 @@ runtime: org.kde.Platform
 runtime-version: '5.15-22.08'
 sdk: org.kde.Sdk
 command: qsstv
-rename-icon: qsstv
-rename-desktop-file: qsstv.desktop
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -38,9 +36,10 @@ modules:
       - type: archive
         url: http://deb.debian.org/debian/pool/main/q/qsstv/qsstv_9.5.8.orig.tar.xz
         sha256: 125d5032fd470ddfa2b76b2c8b3da6ca25eeddf02282f1f6378379c7a8d777e5
-      - type: patch
-        path: qsstv_icon.patch
       - type: file
         path: be.telenet.user.QSSTV.metainfo.xml
     post-install:
-      - install -Dm644 be.telenet.user.QSSTV.metainfo.xml /app/share/metainfo/be.telenet.user.QSSTV.metainfo.xml
+      - install -Dm644 qsstv.desktop $FLATPAK_DEST/share/applications/be.telenet.user.QSSTV.desktop
+      - sed -i 's:Icon=qsstv:Icon=be.telenet.user.QSSTV:' $FLATPAK_DEST/share/applications/be.telenet.user.QSSTV.desktop
+      - install -Dm644 icons/qsstv.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/be.telenet.user.QSSTV.png
+      - install -Dm644 be.telenet.user.QSSTV.metainfo.xml $FLATPAK_DEST/share/metainfo/be.telenet.user.QSSTV.metainfo.xml
