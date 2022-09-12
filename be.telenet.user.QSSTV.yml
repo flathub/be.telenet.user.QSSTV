@@ -3,6 +3,8 @@ runtime: org.kde.Platform
 runtime-version: '5.15-22.08'
 sdk: org.kde.Sdk
 command: qsstv
+rename-icon: qsstv
+rename-desktop-file: qsstv.desktop
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -29,22 +31,16 @@ modules:
         sha256: c90b53949c767f049733b442cd6e0a48648b55d99d4df5ef3f852d985f45e880
 
   - name: qsstv
-    buildsystem: simple
-    build-commands:
-      - mkdir -p $FLATPAK_DEST/share/applications/
-      - mkdir -p $FLATPAK_DEST/share/icons/hicolor/48x48/apps/
-      - cp $FLATPAK_BUILDER_BUILDDIR/icons/qsstv.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/be.telenet.user.QSSTV.png
-      - qmake QMAKE_LFLAGS="-L/app/lib" QTC_PREFIX="/app"
-      - make -j$FLATPAK_BUILDER_N_JOBS
-      - make install INSTALL_ROOT=$FLATPAK_DEST/bin
-      - mv $FLATPAK_DEST/bin/usr/local/bin/qsstv $FLATPAK_DEST/bin/qsstv
-      - mv $FLATPAK_DEST/bin/usr/local/share/applications/qsstv.desktop $FLATPAK_DEST/share/applications/be.telenet.user.QSSTV.desktop
-      - sed -i 's:Icon=qsstv:Icon=be.telenet.user.QSSTV:' $FLATPAK_DEST/share/applications/be.telenet.user.QSSTV.desktop
-      - rm -rf $FLATPAK_DEST/bin/usr/
-      - install -D be.telenet.user.QSSTV.metainfo.xml /app/share/metainfo/be.telenet.user.QSSTV.metainfo.xml
+    buildsystem: qmake
+    config-opts:
+      - QMAKE_LIBDIR=/app/lib
     sources:
       - type: archive
         url: http://deb.debian.org/debian/pool/main/q/qsstv/qsstv_9.5.8.orig.tar.xz
         sha256: 125d5032fd470ddfa2b76b2c8b3da6ca25eeddf02282f1f6378379c7a8d777e5
+      - type: patch
+        path: qsstv_icon.patch
       - type: file
         path: be.telenet.user.QSSTV.metainfo.xml
+    post-install:
+      - install -Dm644 be.telenet.user.QSSTV.metainfo.xml /app/share/metainfo/be.telenet.user.QSSTV.metainfo.xml

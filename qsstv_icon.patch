@@ -1,0 +1,13 @@
+diff --git a/qsstv.pro.orig b/qsstv.pro
+index b6df03a..4c4b886 100644
+--- a/qsstv.pro.orig
++++ b/qsstv.pro
+@@ -530,7 +530,7 @@ target.path = $$PREFIX/bin
+ shortcutfiles.files =qsstv.desktop
+ shortcutfiles.path = $$PREFIX/share/applications/
+ data.files += icons/qsstv.png
+-data.path=$$PREFIX/share/icons/hicolor/42x42/apps/
++data.path=$$PREFIX/share/icons/hicolor/48x48/apps/
+ 
+ 
+ 
