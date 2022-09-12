@@ -33,7 +33,7 @@ modules:
     build-commands:
       - mkdir -p $FLATPAK_DEST/share/applications/
       - mkdir -p $FLATPAK_DEST/share/icons/hicolor/48x48/apps/
-      - cp $FLATPAK_BUILDER_BUILDDIR/qsstv/icons/qsstv.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/be.telenet.user.QSSTV.png
+      - cp $FLATPAK_BUILDER_BUILDDIR/icons/qsstv.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/be.telenet.user.QSSTV.png
       - qmake QMAKE_LFLAGS="-L/app/lib" QTC_PREFIX="/app"
       - make -j$FLATPAK_BUILDER_N_JOBS
       - make install INSTALL_ROOT=$FLATPAK_DEST/bin
@@ -44,7 +44,7 @@ modules:
       - install -D be.telenet.user.QSSTV.metainfo.xml /app/share/metainfo/be.telenet.user.QSSTV.metainfo.xml
     sources:
       - type: archive
-        url: http://users.telenet.be/on4qz/qsstv/downloads/qsstv_9.4.4.tar.gz
-        sha256 : f1a3c2f5e97b2efc36893b36dda9a0852d7c51129436e586580c05e2b5e93039
+        url: http://deb.debian.org/debian/pool/main/q/qsstv/qsstv_9.5.8.orig.tar.xz
+        sha256: 125d5032fd470ddfa2b76b2c8b3da6ca25eeddf02282f1f6378379c7a8d777e5
       - type: file
         path: be.telenet.user.QSSTV.metainfo.xml

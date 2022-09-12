@@ -19,6 +19,7 @@
  </screenshots>
  <url type="homepage">http://users.telenet.be/on4qz</url>
  <releases>
+  <release version="9.5.8" date="2021-08-03"/>
   <release version="9.4.4" date="2019-08-04"/>
  </releases>
  <content_rating type="oars-1.1"/>
