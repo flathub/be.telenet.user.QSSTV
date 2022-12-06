@@ -34,8 +34,8 @@ modules:
       - QMAKE_LIBDIR=/app/lib
     sources:
       - type: archive
-        url: http://deb.debian.org/debian/pool/main/q/qsstv/qsstv_9.5.8.orig.tar.xz
-        sha256: 125d5032fd470ddfa2b76b2c8b3da6ca25eeddf02282f1f6378379c7a8d777e5
+        url: https://www.qsl.net/o/on4qz//qsstv/downloads/qsstv_9.5.8.tar.gz
+        sha256: c03f7fa5c680ced8fd331c25ff3e47440c9aedb48ec7b66255c6aa0ed88e7a68
       - type: file
         path: be.telenet.user.QSSTV.metainfo.xml
     post-install:

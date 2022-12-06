@@ -13,11 +13,11 @@
  </description>
  <screenshots>
   <screenshot type="default">
-   <image>https://community.linuxmint.com/img/screenshots/qsstv.png</image>
-   <caption>Receive HAMDRM Window</caption>
+   <image>https://www.qsl.net/on4qz/qsstv/manual/rxwidget1.png</image>
+   <caption>Receive SSTV Window</caption>
   </screenshot>
  </screenshots>
- <url type="homepage">http://users.telenet.be/on4qz</url>
+ <url type="homepage">https://www.qsl.net/on4qz/</url>
  <releases>
   <release version="9.5.8" date="2021-08-03"/>
   <release version="9.4.4" date="2019-08-04"/>
