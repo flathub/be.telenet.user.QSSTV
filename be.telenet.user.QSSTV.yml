@@ -37,9 +37,11 @@ modules:
         url: https://www.qsl.net/o/on4qz/qsstv/downloads/qsstv_9.5.8.tar.gz
         sha256: c03f7fa5c680ced8fd331c25ff3e47440c9aedb48ec7b66255c6aa0ed88e7a68
       - type: file
+        path: be.telenet.user.QSSTV.png
+      - type: file
         path: be.telenet.user.QSSTV.metainfo.xml
     post-install:
       - install -Dm644 qsstv.desktop $FLATPAK_DEST/share/applications/be.telenet.user.QSSTV.desktop
       - sed -i 's:Icon=qsstv:Icon=be.telenet.user.QSSTV:' $FLATPAK_DEST/share/applications/be.telenet.user.QSSTV.desktop
-      - install -Dm644 icons/qsstv.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/be.telenet.user.QSSTV.png
+      - install -Dm644 be.telenet.user.QSSTV.png $FLATPAK_DEST/share/icons/hicolor/64x64/apps/be.telenet.user.QSSTV.png
       - install -Dm644 be.telenet.user.QSSTV.metainfo.xml $FLATPAK_DEST/share/metainfo/be.telenet.user.QSSTV.metainfo.xml
