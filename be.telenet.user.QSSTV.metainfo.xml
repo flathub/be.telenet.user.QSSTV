@@ -18,6 +18,7 @@
   </screenshot>
  </screenshots>
  <url type="homepage">https://www.qsl.net/on4qz/</url>
+ <url type="bugtracker">https://github.com/ON4QZ/QSSTV/issues</url>
  <releases>
   <release version="9.5.8" date="2021-08-03"/>
   <release version="9.4.4" date="2019-08-04"/>
