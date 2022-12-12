@@ -1,3 +1,5 @@
 {
+    "end-of-life": "The application has been renamed to net.qsl.QSSTV",
+    "end-of-life-rebase": "net.qsl.QSSTV",
     "skip-icons-check": true
 }
